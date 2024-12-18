@@ -1,4 +1,4 @@
-﻿# Bank_cheque_extraction
+
 
 # Automating Bank Cheque Extraction from Scanned PDFs
 
@@ -6,7 +6,7 @@ This project automates the extraction of key details from scanned bank cheque im
 
 ## Project Overview
 
-**Project Title**: Automating Bank Cheque Extraction from Scanned PDFs
+
 
 ### <ul>
   <li><strong>Project Tasks:</strong>
