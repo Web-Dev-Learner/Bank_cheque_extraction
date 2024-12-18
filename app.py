@@ -1,21 +1,27 @@
+# Built-in modules
 import os
 import json
 from datetime import datetime
-import fitz  # PyMuPDF
 import re
+import io
+import tempfile
+
+# Third-party libraries
+import fitz  # PyMuPDF
 import pandas as pd
 import matplotlib.pyplot as plt
-import streamlit as st
-from db_handler import insert_cheque_details, fetch_cheque_details, get_db_connection
-from gemini import Model
-import io
 
+import matplotlib
+matplotlib.use('Agg') 
+
+import streamlit as st
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
-from io import BytesIO
-
-import tempfile
 from fpdf import FPDF
+
+# Local modules
+from db_handler import insert_cheque_details, fetch_cheque_details, get_db_connection
+from gemini import Model
 
 
 
