@@ -21,8 +21,12 @@ from fpdf import FPDF
 
 # Local modules
 from db_handler import insert_cheque_details, fetch_cheque_details, get_db_connection
+
+
 from gemini import Model
 
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
