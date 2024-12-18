@@ -7,6 +7,7 @@ from PIL import Image
 load_dotenv()
 
 api_key = os.getenv('GEMINI_API_KEY')
+
 if not api_key:
     raise ValueError("API key is missing. Please set the GEMINI_API_KEY in the .env file.")
 
