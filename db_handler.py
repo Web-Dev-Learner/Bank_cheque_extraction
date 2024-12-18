@@ -3,6 +3,8 @@ import psycopg2
 import os
 import logging
 
+from urllib.parse import urlparse
+
 
 
 # Set up logging
@@ -11,13 +13,32 @@ logging.basicConfig(level=logging.INFO)
 # Set up the connection
 def get_db_connection():
     try:
+        DATABASE_URL = os.getenv("DATABASE_URL")
+        parsed_url = urlparse(DATABASE_URL)
+
+        db_host = parsed_url.hostname
+        db_port = parsed_url.port if parsed_url.port else 5432  # Default to 5432 if not specified
+        db_user = parsed_url.username
+        db_password = parsed_url.password
+        db_name = parsed_url.path[1:]  
+        # Strip the leading '/' from the path
+        
         return psycopg2.connect(
-            dbname=os.getenv('DB_NAME'),
-            user=os.getenv('DB_USER'),
-            password=os.getenv('DB_PASSWORD'),
-            host=os.getenv('DB_HOST'),
-            port=os.getenv('DB_PORT')
+        host=db_host,
+        port=db_port,
+        user=db_user,
+        password=db_password,
+        dbname=db_name
         )
+
+
+        # return psycopg2.connect(
+        #     dbname=os.getenv('DB_NAME'),
+        #     user=os.getenv('DB_USER'),
+        #     password=os.getenv('DB_PASSWORD'),
+        #     host=os.getenv('DB_HOST'),
+        #     port=os.getenv('DB_PORT')
+        # )
     except Exception as error:
         logging.error(f"Error connecting to the database: {error}")
         raise
