@@ -4,6 +4,8 @@
 
 This project automates the extraction of key details from scanned bank cheque images and PDFs. It utilizes Optical Character Recognition (OCR) and advanced image processing techniques to extract vital cheque information such as the payee name, cheque number, bank name, amount in words and numbers, MICR code, and more. The extracted details are then stored in a structured format for further processing.
 
+Preview [**Video Demo**](https://drive.google.com/file/d/1auC_fv5Wb1GInphJgwB6nwOCJ3nsFvEf/view?usp=sharing) for a detailed walkthrough.
+
 ## Project Overview
 
 
