@@ -12,11 +12,11 @@ logging.basicConfig(level=logging.INFO)
 def get_db_connection():
     try:
         return psycopg2.connect(
-            dbname="cheque_extraction",
-            user="shri",
+            dbname=os.getenv('DB_NAME'),
+            user=os.getenv('DB_USER'),
             password=os.getenv('DB_PASSWORD'),
-            host="localhost",
-            port="5432"
+            host=os.getenv('DB_HOST'),
+            port=os.getenv('DB_PORT')
         )
     except Exception as error:
         logging.error(f"Error connecting to the database: {error}")

@@ -202,6 +202,8 @@ def upload_page():
                     st.image(image_path, caption="Extracted Image", use_container_width=True)  # Updated line
                     extracted_details = Model(image_path)
                     
+                    print(extracted_details ,"here is details")
+                    
                     try:
                         details = json.loads(extracted_details)
                         st.json(details)
