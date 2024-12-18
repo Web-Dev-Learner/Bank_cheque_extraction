@@ -9,10 +9,10 @@ import tempfile
 # Third-party libraries
 import fitz  # PyMuPDF
 import pandas as pd
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-# import matplotlib
-# matplotlib.use('Agg') 
+import matplotlib
+matplotlib.use('Agg') 
 
 import streamlit as st
 from reportlab.lib.pagesizes import letter
